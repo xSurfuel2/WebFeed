@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Universo Dragon Ball Z</title>
+        <link>https://velvety-arithmetic-5f79f2.netlify.app/</link>
+        <description>Página de inicio</description>
+        <language>es</language>
+        <pubDate>Mon, 21 Apr 2025 12:00:00 GMT</pubDate>
+        <item>
+            <title>Línea del Tiempo</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/timeline</link>
+            <description>Zona destinada a visualizar todos los eventos importantes en Dragon Ball Z ordenados por tiempo.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/timeline</guid>
+        </item>
+        <item>
+            <title>Sagas</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/sagas</link>
+            <description>Apartado dedicado a visualizar las sagas y los niveles de poder de cada una de ellas.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/sagas</guid>
+        </item>
+        <item>
+            <title>Películas</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/peliculas</link>
+            <description>En este apartado podremos ver las películas actualizadas de Dragon Ball y un breve resumen de cada una de ellas.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/peliculas</guid>
+        </item>
+        <item>
+            <title>Transformaciones</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/datos</link>
+            <description>Aquí podremos ver las transformaciones de Dragon Ball y una descripción y multiplicador de cada una.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/datos</guid>
+        </item>
+        <item>
+            <title>Tablas de Batallas</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/tablas</link>
+            <description>Aquí una lista de todas las batallas de Dragon Ball Z ordenadas y en la que podremos visualizar los niveles de poder y el vencedor de cada una.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/tablas</guid>
+        </item>
+        <item>
+            <title>Quizz</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/quizz</link>
+            <description>En este apartado contamos con un quizz de Dragon Ball en el que demostrar que eres un verdadero erudito de Dragon Ball.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/quizz</guid>
+        </item>
+        <item>
+            <title>Formulario</title>
+            <link>https://velvety-arithmetic-5f79f2.netlify.app/formulario</link>
+            <description>Formulario de inicio de sesión de usuario.</description>
+            <guid isPermaLink="true">https://velvety-arithmetic-5f79f2.netlify.app/formulario</guid>
+        </item>      
+    </channel>
+</rss>
