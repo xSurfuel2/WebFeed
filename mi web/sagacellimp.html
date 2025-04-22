@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saga de Cell Imperfecto Niveles de Poder</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script> <!-- Incluir ECharts -->
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./css/stylesS1.css" />
+</head>
+<body>
+    <h1>Saga de Cell Imperfecto Niveles de Poder</h1> <!-- Título de la página -->
+    
+    <div id="chart-container">
+        <div class="chart" id="miGrafica"></div>
+    </div>
+
+    <script>
+        var dom = document.getElementById('miGrafica');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Vegeta SSG2', 'Trunks SSG2', 'Cell 2F', 'N16', 'Cell 1F', 'Kamicolo', 'N17', 'N18', ]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            grid: {
+                left: '3%',
+                right: '7%',
+                bottom: '5%',
+                top: '3%',
+                containLabel: true
+            },
+            series: 
+            [
+                {
+                    data: 
+                    [
+                        { value: 837000000, itemStyle: { color: '#1f3dc2f1'} },     /*Vegeta*/
+                        { value: 826460000, itemStyle: { color: '#6b26ddce'} },     /*Trunks*/
+                        { value: 750000000, itemStyle: { color: '#54b901ee' } },    /*Cell 2nd Form*/
+                        { value: 350000000, itemStyle: { color: '#fc6c2cdc' } },    /*N16*/
+                        { value: 350000000, itemStyle: { color: '#54b901ee' } },    /*Cell 1st Form*/
+                        { value: 285000000, itemStyle: { color: '#12b335ee' } },      /*Kamicolo*/
+                        { value: 285000000, itemStyle: { color: '#a8b6c7d8' } },      /*N17*/
+                        { value: 270000000, itemStyle: { color: '#ffccffe7' } },      /*N18*/
+                     ],
+                   
+                     type: 'bar',
+                    label: 
+                    {
+                        
+                        show: true,
+                        position: 'inside',
+                        formatter: function(params) 
+                        {
+                        // Función para formatear el número con comas
+                        function formatNumber(num) 
+                        {
+                         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        return formatNumber(params.value); // Devuelve el número con comas
+                        
+                        }
+                    }
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>

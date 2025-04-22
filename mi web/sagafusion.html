@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saga de la Fusión Niveles de Poder</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script> <!-- Incluir ECharts -->
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./css/stylesS1.css" />
+</head>
+<body>
+    <h1>Saga de la Fusión Niveles de Poder</h1> <!-- Título de la página -->
+    
+    <div id="chart-container">
+        <div class="chart" id="miGrafica"></div>
+    </div>
+
+    <script>
+        var dom = document.getElementById('miGrafica');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Vegito SS1', 'Buuhan', 'Buutenks','Gohan M','Gotenks SS3','Super Buu','Goku SS3','Evil Buu','Good Buu',]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            grid: {
+                left: '3%',
+                right: '7%',
+                bottom: '5%',
+                top: '3%',
+                containLabel: true
+            },
+            series: 
+            [
+                {
+                    data: 
+                    [
+                        { value: 200000000000, itemStyle: { color: '#8EA9DB'} },    /*Vegito SSJ1*/    
+                        { value: 75620000000, itemStyle: { color: '#FFCCCC'} },      /*Super Buu Gohan*/
+                        { value: 65400000000, itemStyle: { color: '#FFCCCC'} },     /*Super Buu Gotenks*/
+                        { value: 45000000000, itemStyle: { color: '#eeec94e8'} },     /*Mystic Gohan*/
+                        { value: 36000000000, itemStyle: { color: '#FFC32D'} },     /*Gotenks SS3*/
+                        { value: 28600000000, itemStyle: { color: '#FFCCCC'} },       /*Super Buu*/
+                        { value: 18000000000, itemStyle: { color: '#fc9c0cdc'} },     /*Goku SS3*/
+                        { value: 8500000000, itemStyle: { color: '#ABABAB'} },     /*Evil Buu*/
+                        { value: 7100000000, itemStyle: { color: '#FFCCCC'} },     /*Good Buu*/
+
+
+                        
+
+                       
+
+                     ],
+                   
+                     type: 'bar',
+                    label: 
+                    {
+                        
+                        show: true,
+                        position: 'inside',
+                        formatter: function(params) 
+                        {
+                        // Función para formatear el número con comas
+                        function formatNumber(num) 
+                        {
+                         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        return formatNumber(params.value); // Devuelve el número con comas
+                        
+                        }
+                    }
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>

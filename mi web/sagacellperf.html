@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saga de Cell Perfecto Niveles de Poder</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script> <!-- Incluir ECharts -->
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./css/stylesS1.css" />
+</head>
+<body>
+    <h1>Saga de Cell Perfecto Niveles de Poder</h1> <!-- Título de la página -->
+    
+    <div id="chart-container">
+        <div class="chart" id="miGrafica"></div>
+    </div>
+
+    <script>
+        var dom = document.getElementById('miGrafica');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Cell','Gohan SS1','Goku SS1','Vegeta SSG2', 'Trunks SSG2', 'N16', 'Kamicolo']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            grid: {
+                left: '3%',
+                right: '7%',
+                bottom: '5%',
+                top: '3%',
+                containLabel: true
+            },
+            series: 
+            [
+                {
+                    data: 
+                    [
+                        { value: 1800000000, itemStyle: { color: '#54b901ee'} },     /*Cell Perfect*/
+                        { value: 1450000000, itemStyle: { color: '#eeec94e8'} },     /*Gohan SS1*/
+                        { value: 1400000000, itemStyle: { color: '#fc9c0cdc'} },     /*Goku SS1*/
+                        { value: 837000000, itemStyle: { color: '#1f3dc2f1'} },     /*Vegeta SS Grade 2*/
+                        { value: 826460000, itemStyle: { color: '#6b26ddce'} },     /*Trunks SS Grade 2*/
+                        { value: 350000000, itemStyle: { color: '#fc6c2cdc' } },    /*N16*/
+                        { value: 285000000, itemStyle: { color: '#12b335ee' } },     /*Kamicolo*/
+
+                     ],
+                   
+                     type: 'bar',
+                    label: 
+                    {
+                        
+                        show: true,
+                        position: 'inside',
+                        formatter: function(params) 
+                        {
+                        // Función para formatear el número con comas
+                        function formatNumber(num) 
+                        {
+                         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        return formatNumber(params.value); // Devuelve el número con comas
+                        
+                        }
+                    }
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>
