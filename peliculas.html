@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 45px; 
+            
+        }
+        .card 
+        {
+            border: 1px solid rgba(26, 26, 26, 0.705);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(7, 7, 7, 0.76);
+            width: 250px;
+            margin: 15px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+
+        }
+        .card:hover 
+        {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.815);
+        }
+        .card figure 
+        {
+            margin: 0;
+            position: relative;
+        }
+        .card img 
+        {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card figcaption 
+        {
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        .modal 
+        {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Sirve para que el modal esté por encima de otros elementos */
+        }
+        .modal-content 
+        {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            max-height: 80vh; /* Limitar la altura máxima para que no ocupe toda la pantalla */
+            text-align: left;
+            position: relative;
+            z-index: 1001; /* Sirve para que el modal esté por encima de otros elementos */
+            overflow-y: auto; /* Permitir scroll vertical */
+        }
+        .modal-title 
+        { 
+        font-family: 'Saiyan-Sans', sans-serif;
+        font-size: 2.7em; 
+        margin-bottom: 15px; 
+        text-align: center;
+        color:#1a1a1a
+        }
+        .modal-close 
+        {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+        .modal img 
+        {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        
+        @font-face  /*Fuente personalizada de Dragon Ball*/
+        {
+        font-family: 'Saiyan-Sans';
+        src: url('./fonts/Saiyan-Sans.ttf') format('truetype');
+        }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Universo Dragon Ball Z</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="./Index.html" tabindex="1">Inicio</a></li>
+                <li><a href="./timeline.html" tabindex="2">Línea del Tiempo</a></li>
+                <li><a href="./sagas.html" tabindex="3">Sagas</a></li>
+                <li><a href="./peliculas.html" tabindex="4">Películas</a></li>
+                <li><a href="./datos.html" tabindex="5">Transformaciones</a></li>
+                <li><a href="./Tablas.html" tabindex="6">Tablas de Batallas</a></li>
+                <li><a href="./quizz.html" tabindex="7" target="_blank">Quizz</a></li>
+                <li><a href="./formulario.html" tabindex="8">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--Pelicula 1-->
+        <div class="container">
+            <div class="card" onclick="showModal('pelicula1')"> 
+                <figure>
+                    <img src="./Imagenes proyecto/Peli1.jpg" alt="The World's Strongest">
+                    <figcaption>The World's Strongest</figcaption> <!--Descripción imagen-->
+                </figure>
+            </div>
+            <div id="pelicula1" class="modal"> <!--Desplegable-->
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('pelicula1')">&times;</span>
+                    <h2 class="modal-title">The World's Strongest</h2>
+                    <img src="./Imagenes proyecto/gokuvswheelo3.gif" alt="The World's Strongest">
+
+                    <p><b>Ubicación en la Línea del Tiempo</b></p>
+                    <p>Debido a que el dogi de Goku tiene una marca «Kame» en el pecho y una marca «Kaio» en la espalda, se ubica después de la batalla con Vegeta pero antes de la llegada de Goku al Planeta Namek. Gohan tiene un flashback de cuando Piccolo lo defendió del ataque de Nappa.</p>
+                    
+                    <p><b>Resumen</b></p>
+                    <p>El Dr. Kochin utiliza las Bolas de Dragóns para liberar al Dr. Wheelo y su laboratorio del hielo. 
+                        Los Bio-Men de Kochin secuestran a Bulma y el Maestro Roshi pensando que es el luchador más fuerte del mundo.
+                        Oolong informa a Goku sobre el secuestro, quien parte a rescatar a sus amigos.
+                        Piccolo, Gohan y Krillin luchan contra los Bio-Guerreros Misokatsun, Kishime y Ebifurya, y Goku se les une para ayudarlos.
+                        El Dr. Wheelo aparece con su cuerpo robótico con su cerebro dentro atacando a Goku y los Guerreros Z y derrotándolos debido a su gran poder.
+                        Goku usa el Kaio ken x4 y consigue igualar al Dr Wheelo. 
+                        Finalmente, Goku forma y lanza una Genkidama para destruir a Wheelo y salvar la Tierra.</p>
+
+                    <p><b>Personajes</b></p>
+                    <p>Goku, Gohan, Piccolo, Krillin, Bulma, Oolong, Chi-Chi, Masestro Roshi, Turtle, Shenron.</p>
+                    <p>Bio-Men, Dr. Kochin, Kishime, Ebifurya, Misokatsun, Dr. Wheelo.</p>
+                 </div>
+            </div>
+
+        <!--Pelicula 2-->
+        <div class="card" onclick="showModal('pelicula2')">
+            <figure>
+                <img src="./Imagenes proyecto/Peli2.jpeg" alt="The Tree of Might">
+                <figcaption>The Tree of Might</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula2" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula2')">&times;</span>
+                <h2 class="modal-title">The Tree of Might</h2>
+                <img src="./Imagenes proyecto/gokuvsturles.gif" alt="Película 2">
+
+                <p><b>Ubicación en la Línea del Tiempo</b></p>
+                <p>Esta película tiene lugar (aunque no literalmente) después de que Goku llegara a Namek, pero antes del enfrentamiento final con Freezer.</p>
+                
+                <p><b>Resumen</b></p>
+                <p>Un grupo de aliens liderados por un Saiyan llamado Turles, determinan que la Tierra es ideal para plantar la semilla del Árbol del Poder, el cual absorbe todos los nutrientes del planeta.
+                    Kaio Sama contacta con los Guerreros Z y les avisa del peligro. Goku, Yamcha, Krillin, Tien y Chaos intentan destruir el árbol, pero sus ataques de energía no surten efecto.
+                    Posteriormente los Guerreros Z se enfrentan a los miembros de Turles: Cacao, Amond, Daiz, Rasin y Lakasei.
+                    Turles hace que Gohan se transforme en un Oozaru usando una luna artificial, pero Goku le corta la cola y revierte su transformación.
+                    Goku enfrenta a Turles, quien come una fruta del Árbol del Poder, aumentando su poder drásticamente. Aunque Goku usa el Kaio-ken no puede derrotar a Turles hasta que absorbe la energía del Árbol del Poder y lanza una Súper Genkidama, destruyendo a Turles y al árbol.
+                    La energía liberada por la explosión de la Genkidama restaura la Tierra por completo.</p>
+
+                <p><b>Personajes</b></p>
+                <p>Goku, Gohan, Piccolo, Krillin, Yamcha, Tien, Chaos, Kaio Sama, Bulma, Chi-Chi, Maestro Roshi, Icarus, Puar, Bubbles, Oolong, Turtle, Shenron.</p>
+                <p>Turles, Cacao, Amond, Daiz, Rasin, Lakasei.</p>
+            </div>
+        </div>
+
+        <!--Pelicula 3-->
+        <div class="card" onclick="showModal('pelicula3')">
+            <figure>
+                <img src="./Imagenes proyecto/Peli3-2.jpg" alt="The Tree of Might">
+                <figcaption>Lord Slug</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula3" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula3')">&times;</span>
+                <h2 class="modal-title">Lord Slug</h2>
+                <img src="./Imagenes proyecto/gokuvsslug.gif" alt="Lord Slug">
+
+                <p><b>Ubicación en la Línea del Tiempo</b></p>
+                <p>Daizenshuu 6 señala que la película tiene lugar después de la llegada de Goku a Namek (en el momento en que se encuentra en plena batalla), pero antes del enfrentamiento final con Frieza, y de la transformación de Goku en Super Saiyan y al menos un año después de los acontecimientos de Dragon Ball Z: El Árbol del Poder.</p>
+                
+                <p><b>Resumen</b></p>
+                <p>En la película, mientras Piccolo y Gohan están entrenando cuando de repente, sienten un objeto espacial aproximándose a la Tierra, provocando pánico. Goku y Krillin intentan desviar el objeto con un Kamehameha combinado, sin éxito. Finalmente una nave espacial que aterriza, llena de soldados de Lord Slug. Este busca las Bolas de Dragón y pide la juventud eterna a Shenron. Instala un dispositivo que cubre la Tierra con nubes, bloqueando la luz solar.
+                   Gohan se infiltra en el campamento de Slug, pero es capturado. Piccolo aparece y lo rescata, pero son vencidos. Goku y Krillin llegan para ayudar. Goku se transforma en Pseudo Super Saiyan, dominando a Slug, quien revela ser un Súper Namekiano y se transforma en gigante. Piccolo le arranca las orejas y Gohan lo debilita con su silbato. Piccolo da su energía a Goku, quien usa el Kaioken x100 para herir a Slug. Luego, Goku lanza una Genkidama, destruyendo a Slug y restaurando la atmósfera.</p>
+
+                <p><b>Personajes</b></p>
+                <p>Goku, Gohan, Piccolo, Krillin, Yajirobe, Bulma, Dr. Brief, Chi-Chi, Oolong, Master Roshi, Shenron, King Kai.</p>
+                <p>Lord Slug, Angila, Kakuja, Comandante Zeeun, Wings, Gyoshu, Medamatcha.</p>
+            </div>
+        </div>
+        
+            <!--Pelicula 4-->
+        <div class="card" onclick="showModal('pelicula4')">
+        <figure>
+            <img src="./Imagenes proyecto/Peli4.jpg" alt="Cooler's Revenge">
+            <figcaption>Cooler's Revenge</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula4" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula4')">&times;</span>
+                <h2 class="modal-title">Cooler's Revenge</h2>
+                <img src="./Imagenes proyecto/gokuvscooler2.gif" alt="Cooler's Revenge">
+
+                <p><b>Ubicación en la Línea del Tiempo</b></p>
+                <p>Esta película tiene lugar después de que llegara Trunks del Futuro, pero antes de que lleguen los Androides.
+                    Cooler llegó a la Tierra en el año 764, cuando los Guerreros Z acababan de empezar a entrenar, pero es combatido más adelante.</p>
+                
+                <p><b>Resumen</b></p>
+                <p>La película comienza con un flashback de la destrucción del Planeta Vegeta por parte de Freezer. Cooler detecta la cápsula espacial de Goku escapando, pero decide que es asunto de Freezer.
+                    Tiempo después, Cooler se entera de que Freezer ha sido derrotado por Goku. Enfurecido decide ir a la Tierra para matarlo y restaurar el honor.                
+                    Cooler y su equipo llegan a la Tierra y emboscan a Goku y sus amigos hiriendo a Goku mientras este intenta proteger a Gohan.                       
+                    Gohan lleva a Goku a una cueva para refugiarse y va en busca de semillas senzu para curarlo. En su camino es emboscado por los subordinados de Cooler, pero Piccolo llega a tiempo para salvarlo.                       
+                    Posteriormente Piccolo lucha contra Cooler valientemente pero es derrotado. Salza continúa persiguiendo a Gohan, quien logra entregar las semillas senzu a Goku.                       
+                    Goku se recupera y enfrenta a Cooler. Cooler revela una transformación final, superando incluso el poder de Freezer. Goku, a pesar de usar el Kaioken x20 es superado por Cooler, pero cuando este amenaza con destruir la Tierra, Goku canaliza su furia y se transforma en Super Saiyan, superando por mucho a Cooler. 
+                    Cooler lanza una Supernova para destruir la Tierra, pero Goku la devuelve con un Super Kamehameha, enviando a Cooler al Sol, donde muere.</p>
+
+                <p><b>Personajes</b></p>
+                <p>Goku, Gohan, Piccolo, Krillin, Chi-Chi, Maestro Roshi, Icarus, Oolong, Yajirobe, Korin, Bardock.</p>
+                <p>Cooler, Salza, Daiz, Neiz, Dore, Freezer.</p>
+            </div>
+        </div>
+
+            <!--Pelicula 5-->
+            <div class="card" onclick="showModal('pelicula5')">
+            <figure>
+                <img src="./Imagenes proyecto/Peli5.jpg" alt="The Return of Cooler">
+                <figcaption>The Return of Cooler</figcaption>
+                </figure>
+            </div>
+            <div id="pelicula5" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('pelicula5')">&times;</span>
+                    <h2 class="modal-title">The Return of Cooler</h2>
+                    <img src="./Imagenes proyecto/gokuvsmetalcooler2.gif" alt="The Return of Cooler">
+
+                    <p><b>Ubicación en la Línea del Tiempo</b></p>
+                    <p>A partir del gi sin marcas de Goku, Dende siendo el guardián de la Tierra, y Vegeta transformándose en Super Saiyan, podemos afirmar que ocurre después de la saga de los Androides y antes de la saga de Cell.</p>
+                    
+                    <p><b>Resumen</b></p>
+                    <p>La película comienza con la Big Gete Star absorbiendo la energía de Nuevo Namek.
+                        Goku, Gohan, Oolong, Krillin, Yajirobe, Maestro Roshi y Piccolo llegan a Nuevo Namek para ayudar a Dende y se encuentran con un ejército de robots que planean esclavizar a los Namekianos. 
+                        El líder de los robots es Metal Cooler, quién sobrevivió a su batalla anterior gracias a la Big Gete Star que lo reconstruyó.
+                        Goku lucha contra Metal Cooler, pero incluso en Super Saiyan no puede igualar el poder regenerativo de su nuevo cuerpo metálico. Vegeta llega y se transforma en Super Saiyan para ayudar a Goku, pero ambos son superados.
+                        Ambos usan todo su poder para destrozar a Metal Cooler, pero la Big Gete Star regenera cada parte en un nuevo Metal Cooler. 
+                        Los Saiyan son capturados y sus energías son drenadas para alimentar la Big Gete Star.
+                        Posteriormente descubren que Cooler fue asimilado por la Big Gete Star y se fusionó con su ordenador principal, por lo que ambos guerreros logran sobrecargar los circuitos y destruir todos los Metal Coolers.
+                        Goku y Vegeta se enfrentan a Metal Cooler Core en su forma de batalla, y lo destruyen, causando que la Big Gete Star se desintegre y explote.</p>
+
+                    <p><b>Personajes</b></p>
+                    <p>Goku, Vegeta, Dende, Moori, Gohan, Piccolo, Krillin, Maestro Roshi, Oolong, Yajirobe, Mr. Popo.</p>
+                    <p>Metal Cooler, Robots.</p>
+                </div>
+            </div>    
+
+            <!--Pelicula 6-->
+            <div class="card" onclick="showModal('pelicula6')">
+                <figure>
+                    <img src="./Imagenes proyecto/Peli6.jpg" alt="Super Android 13!">
+                    <figcaption>Super Android 13!</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula6" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula6')">&times;</span>
+                        <h2 class="modal-title">Super Android 13!</h2>
+                        <img src="./Imagenes proyecto/gokuvs13.gif" alt="Super Android 13!">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Se encuadra después de que los Androides 17 y 18 mataran al Dr. Gero y después de que Goku se recuperara totalmente del Virus del Corazón. El Daizenshuu 6 afirma que la película tiene lugar después antes de que Célula alcance su forma Perfecta, lo que la situaría antes de que Goku lleve a los saiyans a la Habitación del Tiempo.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con la muerte del Dr. Gero a manos del Androide 17. Se revela que su supercomputadora aún está activa y trabaja en tres nuevos androides: Android 13, 14 y 15.
+                            Posterirmente, los Androides 14 y 15 atacan la ciudad West City pero Goku y sus amigos logran salvar a los civiles, llevando a los Androides 14 y 15 a un área deshabitada en el Ártico. 
+                            El Androide 13 aparece y revela que fueron creados para matar a Goku, comenzando una batalla intensa entre Goku, Trunks y los androides, a la que se une Vegeta.
+                            Trunks logra destruir al Androide 14 y Vegeta al Androide 15.
+                            El Androide 13 absorbe las piezas de los androides derrotados y se transforma en el Super Androide 13, aumentando enormemente su poder. Los guerreros Z son superados fácilmente incluso en su forma de Super Saiyan.
+                            Goku crea una Genkidama y la absorbe en su forma de Super Saiyan. Con este poder, destruye al Super Androide 13 de un golpe.
+                            Con la derrota de los androides, la supercomputadora del Dr. Gero se apaga para siempre.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goku, Vegeta, Trunks, Gohan, Piccolo, Krillin, Maestro Roshi, Chi-Chi, Oolong.</p>
+                        <p>Androide 13, Androide 14, Androide 15, Dr. Gero.</p>
+                    </div>
+                </div>    
+
+            <!--Pelicula 7-->
+            <div class="card" onclick="showModal('pelicula7')">
+                <figure>
+                    <img src="./Imagenes proyecto/peli7-2.jpg" alt="Broly - The Legendary Super Saiyan">
+                    <figcaption>Broly Legendary SS</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula7" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula7')">&times;</span>
+                        <h2 class="modal-title">Broly - The Legendary Super Saiyan</h2>
+                        <img src="./Imagenes proyecto/broly.gif" alt="Broly - The Legendary Super Saiyan">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Los acontecimientos de esta película tienen lugar después de la saga de Cell Perfecto y justo antes de los Juegos de Cell.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con la destrucción de la Galaxia del Sur por el Legendario Super Saiyan. Paragus, un Saiyan sobreviviente, invita a Vegeta a gobernar un Nuevo Planeta Vegeta y matar al Super Saiyan Legendario. Goku, telepáticamente llamado por Kaio, se entera del caos y usa la Teletransportación para llegar al origen del ki del Super Saiyan.
+                            En el Nuevo Planeta Vegeta, Paragus intenta convencer a Vegeta de sus buenas intenciones, pero Trunks desconfía. Descubren que el planeta está en curso de colisión con un cometa. Gohan, Trunks y Krillin liberan a los esclavos y confirman que el Super Saiyan Legendario existe. Broly, hijo de Paragus, muestra signos de ira al ver a Goku, revelando su inestabilidad emocional.
+                            Broly ataca a Goku, desatando su forma de Super Saiyan. Paragus apenas lo controla con un dispositivo. En una confrontación final, Broly se transforma en el Super Saiyan Legendario, desatando un caos imparable. Goku, Gohan, Trunks y Piccolo intentan detenerlo sin éxito hasta que Vegeta finalmente accede a dar su energía a Goku. Con toda la energía de los Guerreros Z, Goku derrota a Broly con un poderoso golpe, salvando el planeta de la destrucción.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goku, Gohan, Piccolo, Krillin, Trunks, Vegeta,Bulma, Maestro Roshi, Chi-Chi, Oolong, Bikini, Dr. Brief, Kaio Sama, Shamo, Rey Vegeta.</p>
+                        <p>Broly, Paragus, Moah</p>
+                    </div>
+                </div> 
+
+            <!--Pelicula 8-->
+            <div class="card" onclick="showModal('pelicula8')">
+                <figure>
+                    <img src="./Imagenes proyecto/Peli8.jpeg" alt="Bojack Unbound">
+                    <figcaption>Bojack Unbound</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula8" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula8')">&times;</span>
+                        <h2 class="modal-title">Bojack Unbound</h2>
+                        <img src="./Imagenes proyecto/Bojack.gif" alt="Bojack Unbound">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Esta película tiene lugar varios meses después de la derrota de Cell en los Cell Games, ya que Future Trunks regresa y se dice que derrotó a los Androides del futuro.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>Bojack, el villano principal, es liberado tras la muerte de Goku y Cell en el planeta de Kaio. Bojack y su grupo se infiltran en un torneo de artes marciales reemplazando a los luchadores intergalácticos.
+                            Durante el torneo, Gohan, Trunks, Krillin y otros Z Fighters enfrentan a los secuaces de Bojack. Trunks lucha contra Kogu y lo derrota, pero luego es atacado y noqueado por Bojack. Vegeta y Piccolo se unen a la batalla, pero son superados. Gohan es el único que queda luchando y está al borde de ser vencido por Bojack.
+                            En un momento crítico, Goku interviene brevemente desde el Otro Mundo usando la Teletransportación para liberar a Gohan del agarre de Bojack. Inspirado por las palabras de su padre, Gohan se transforma en Super Saiyan 2, ganando el poder necesario para derrotar a los secuaces y a Bojack con un poderoso golpe.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goku, Gohan, Vegeta, Trunks, Piccolo, Krillin, Tien, Yamcha, Bulma, Maestro Roshi, Chi-Chi, Oolong, Chaos, Mr. Satan, X.S. Cash, Mrs. Cash, Monty Cash, Doskoi, Udo, Kaio Sama, Bubbles, Gregory, Sky Dragon, Kim.</p>
+                        <p>Bojack, Bujin, Bido, Zangya, Gokua.</p>
+                    </div>
+                </div> 
+
+            <!--Pelicula 9-->
+            <div class="card" onclick="showModal('pelicula9')">
+                <figure>
+                    <img src="./Imagenes proyecto/peli9.jpg" alt="Broly - Second Coming">
+                    <figcaption>Broly Second Coming</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula9" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula9')">&times;</span>
+                        <h2 class="modal-title">Broly - Second Coming</h2>
+                        <img src="./Imagenes proyecto/gohanvsbroly.gif" alt="Broly - Second Coming">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Tiene lugar 7 años después de la derrota de Broly a manos de Goku en el Nuevo Planeta Vegeta, poco antes de que comience el 25º Torneo Mundial de Artes Marciales, ya que Goku sigue muerto, Gohan ha entablado amistad con Videl y Goten puede volar.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con Broly aterrizando en la Tierra en una cápsula espacial, quedando atrapado en el hielo. Siete años después, Goten, Trunks y Videl buscan las Bolas de Dragón y despiertan a Broly, quien escapa del hielo.
+                            Broly, furioso, confunde a Goten con Goku y ataca. Goten y Trunks luchan contra Broly sin éxito. Justo cuando Broly está a punto de derrotarlos, Gohan aparece y salva a los niños. Gohan lucha contra Broly, quien finalmente se transforma en su forma de Super Saiyan Legendario.
+                            Durante la batalla, Gohan y Broly parecen estar igualados hasta que Gohan utiliza un truco para atraer a Broly a un lago de lava. Broly sobrevive gracias a un escudo de energía y continúa atacando a Gohan. Videl interviene momentáneamente, permitiendo a Gohan liberarse y contraatacar.
+                            En el clímax de la pelea, Gohan, Goten y Goku (apareciendo brevemente desde el otro mundo) combinan sus fuerzas en un Kamehameha final. Trunks también contribuye con una bola de energía, debilitando el ataque de Broly. Finalmente, Broly es derrotado y desintegrado en el sol, restaurando la paz.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goku, Gohan, Goten, Trunks, Videl, Krillin, Coco, Maloja, Zalador, Kasal.</p>
+                        <p>Broly.</p>
+                    </div>
+                </div>
+
+            <!--Pelicula 10-->
+            <div class="card" onclick="showModal('pelicula10')">
+                <figure>
+                    <img src="./Imagenes proyecto/peli10-2.jpg" alt="Bio-Broly">
+                    <figcaption>Bio-Broly</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula10" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula10')">&times;</span>
+                        <h2 class="modal-title">Bio-Broly</h2>
+                        <img src="./Imagenes proyecto/biobroly.gif" alt="Bio-Broly">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Esta película tiene lugar tras la conclusión del 25º Torneo Mundial de Artes Marciales, durante el tiempo en que los luchadores Z estaban ocupados lidiando con Majin Buu.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con científicos, encabezados por Lord Jaguar, creando Bio-Humanos. Mr. Satan, intimidado por Jaguar es obligado a combatir contra estos Bio-Humanos en la isla de laboratorio de Jaguar. Android 18, Goten y Trunks lo acompañan. Durante el enfrentamiento, Trunks y Goten descubren que el mayor arma de Jaguar es una versión clonada y mutada de Broly, llamada Bio-Broly.
+                        Bio-Broly escapa y ataca, demostrando ser un enemigo formidable. A pesar de sus esfuerzos, Goten, Trunks y Android 18 son superados. Krillin aparece para rescatar a Android 18, pero Bio-Broly sigue siendo una amenaza. Goten y Trunks continúan la lucha y logran atraer a Bio-Broly hacia un tanque de bio-líquido que lo derrite parcialmente, pero esto solo hace que el bio-líquido se vuelva más poderoso, comenzando a inundar la isla.
+                        El bio-líquido se solidifica al contacto con el agua del mar. Utilizando un triple Kamehameha, Goten, Trunks y Krillin inundan la isla con agua de mar, solidificando el bio-líquido. Bio-Broly emerge brevemente, solo para convertirse en piedra. Goten y Trunks destruyen la estatua de Bio-Broly, poniendo fin a la amenaza.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goten, Trunks, Android 18, Krillin, Mr. Satan, Marron, Men-Men, Goku, Bubbles.</p>
+                        <p>Bio-Broly, Lord Jaguar, Dr. Collie, Nain</p>
+                    </div>
+                </div>                    
+
+            <!--Pelicula 11-->
+            <div class="card" onclick="showModal('pelicula11')">
+                <figure>
+                    <img src="./Imagenes proyecto/peli11.jpg" alt="Fusion Reborn">
+                    <figcaption>Fusion Reborn</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula11" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula11')">&times;</span>
+                        <h2 class="modal-title">Fusion Reborn</h2>
+                        <img src="./Imagenes proyecto/gogetavsjanemba.gif" alt="Fusion Reborn">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>La película tienen lugar durante la Saga Majin Buu, justo antes de que el conflicto alcance su clímax con la llegada de Super Buu, justo después de que Goku llegue de vuelta al Otro Mundo.
+                            En el reloj de Videl se muestra que la película tiene lugar un sábado 16, que es al menos 9 días después del 25º Torneo Mundial de Artes Marciales (que tuvo lugar el 7 de mayo de 774).</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con el Torneo del Otro Mundo, donde Goku derrota a Froug y Pikkon a Arqua. En la Estación de Chequeo, un ogro joven se distrae y permite que una máquina se sobrecargue, liberando energía maligna que transforma al ogro en el poderoso Janemba. Janemba crea una barrera que atrapa a King Yemma, permitiendo que las almas regresen al mundo de los vivos. En la Tierra, Videl y Gohan reciben un mensaje de socorro y acuden a ayudar.
+                            Goku y Pikkon son llamados por King Yemma para enfrentar a Janemba. Goku lo atrae al Infierno, que ha sido transformado en un mundo psicodélico. Mientras tanto, Gohan derrota a Freezer en la Tierra. Pikkon descubre que insultar la barrera la debilita, mientras Goku se transforma en Super Saiyan 3 para enfrentar a Janemba, pero Janemba se convierte en una forma más poderosa.
+                            Vegeta llega para ayudar a Goku, pero son superados. Finalmente, realizan la Danza de Fusión y se convierten en Gogeta. En la Tierra, Goten y Trunks se fusionan en Gotenks y derrotan al ejército del Dictador. Gogeta destruye a Janemba con su ataque final Stardust Breaker. El Infierno vuelve a la normalidad y las almas regresan al Otro Mundo. Goku y Vegeta se despiden, y la paz es restaurada en ambos mundos.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Gogeta, Gotenks, Goku, Gohan, Goten, Vegeta, Trunks, Mr. Satan, Bulma, Chi-Chi, Videl, Pikkon, Shenron, King Kai, South Kai, West Kai, East Kai, Grand Kai, King Yemma.</p>
+                        <p>Janemba, The Dictator, Saike Demon, Jeice, Freezer.</p>
+                    </div>
+                </div>                     
+
+            <!--Pelicula 12-->
+            <div class="card" onclick="showModal('pelicula12')">
+                <figure>
+                    <img src="./Imagenes proyecto/peli12-2.jpg" alt="Wrath of the Dragon">
+                    <figcaption>Wrath of the Dragon</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula12" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula12')">&times;</span>
+                        <h2 class="modal-title">Wrath of the Dragon</h2>
+                        <img src="./Imagenes proyecto/gokudf.gif" alt="Wrath of the Dragon">
+
+                        <p><b>Ubicación en la Línea del Tiempo</b></p>
+                        <p>Esta película está ambientada tras la derrota de Majin Buu y el regreso de la paz a la Tierra. Según Daizenshuu 7, tiene lugar aproximadamente en la Era 774.</p>
+                        
+                        <p><b>Resumen</b></p>
+                        <p>La película comienza con Tapion y su hermano Minotia sellando a Hildegarn en sus cuerpos en planetas opuestos. En la Tierra, Gohan y Videl, como Great Saiyaman, detienen un robo bancario y conocen a Hoi, quien les pide liberar a Tapion de una caja de música usando las Bolas de Dragón. Shenron libera a Tapion, pero la caja se destruye. Trunks se hace amigo de él.
+                        Hildegarn, un monstruo gigante, comienza a devastar West City. Tapion y Trunks intentan detenerlo, pero Hoi libera la mitad superior de Hildegarn del cuerpo de Tapion, reconstituyendo al monstruo. Gohan, Goten y Goku luchan contra él, pero son superados por su poder. Vegeta interviene, pero también es derrotado. Goten y Trunks se fusionan en Gotenks, pero Hildegarn evoluciona y los separa.
+                        Tapion intenta sellar nuevamente al monstruo tocando su flauta, pero fracasa y Hoi muere aplastado por el monstruo. Goku, en Super Saiyan 3, combate a Hildegarn mientras Trunks corta su cola. Finalmente, Goku usa el Dragon Fist para destruir a Hildegarn. Tapion regresa a su planeta usando la máquina del tiempo de Bulma, dejando su espada a Trunks.</p>
+
+                        <p><b>Personajes</b></p>
+                        <p>Goku, Gohan, Goten, Vegeta, Trunks, Bulma, Krillin, Videl, Master Roshi, Oolong, Shenron, Gotenks, Hoi, Tapion, Minotia, Konatsian Wizard, Sharpner, Miss Hamilton.</p>
+                        <p>Hildegarn.</p>
+                    </div>
+                </div>                    
+
+        </div>
+    </main>
+        <!-- Footer -->
+        <footer>
+            <h3>Contacto</h3>
+            <p>Email: mail@universodragonballz.com</p>
+            <div class="social-media">
+                <a href="https://es.dragon-ball-official.com/" target="_blank">Web Oficial</a>
+                <a href="https://x.com/DB_official_en" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/dragonballanimeofficial/" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    <script> /*script para ventana Pop Up*/
+        function showModal(id) 
+        {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) 
+        {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+    </body>
+    </html>

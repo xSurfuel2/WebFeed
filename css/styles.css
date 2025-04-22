@@ -1,0 +1,269 @@
+
+/*////////////////////////INDEX//////////////////////////////////////*/
+body 
+{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0e00d4ce, #0a5aeea1, #ffe02eb4, #eba205d2);
+    display: flex;
+    flex-direction: column; /* Permite que el footer se mantenga en la parte inferior */
+    background-image: url('./imagenes/Background1.jpg');
+    height:100vh;
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat:repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al fondo */   
+}
+
+header 
+{
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    padding: 0.5em;
+    text-align: center;   
+}
+
+nav ul /*Banner naranja*/
+{
+    
+    list-style-type: none;
+    padding:0em ;
+}
+
+nav ul li /*Botones imicio, linea del tiempo, sagas...*/
+{
+    display:inline-block; 
+    margin: em;
+    font-weight: bold;
+}
+
+.gif-container {
+    width: 100%;
+}
+.gif-container img {
+    width: 100%;
+    height: auto;
+}
+
+#welcome 
+{
+    padding: 20px;
+    text-align: center;
+}
+
+#articles, #characters 
+{
+    padding: 20px;
+}
+
+
+header h1 
+{
+    color: #ffffff;
+    margin: 0;
+    font-size: 2.1em;
+}
+
+
+main {
+    padding: 0px;
+}
+
+h2 { /*Color h2*/
+    text-align: center;
+    color: #ffffff;
+}
+
+
+ul {
+    
+    list-style-type: none;
+    padding: 0;
+    
+    
+}
+
+li { /* Botones*/
+    background: rgba(110, 110, 110, 0.486);
+    margin: 5px 0;
+    padding: 10px;
+    /*border: 1px solid #ffffffc4;*/ /* Borde de los botones*/
+    border-radius: 3px; /* Curvatura del borde de los botones*/
+    
+    transition: background 0.3s; /*Tiempo de transición del hover*/
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -ms-transition: background 0.3s;
+    -o-transition: background 0.3s;
+}
+li:hover /* Hover de los botones*/
+{
+    background: #2c2c2cbe;
+}
+a:link /* Texto de los botones*/
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:visited /* Estilo para los enlaces visitados */ 
+{ 
+    color: #ffffff; /* Mantiene el mismo color que los no visitados */ 
+    text-decoration: none; /* Sin subrayado*/
+}
+h3 
+{
+    text-align: cent;
+    margin: 0;
+    color: #ffffff;
+}
+
+footer 
+{
+    text-align: center;
+    padding: 20px;
+    background-color: #272727;
+    color: #fff;
+    margin-top: auto; /* Asegura que el footer esté al final */
+}
+
+
+
+.social-media a 
+{
+    color: #ebebeb; /* Cambia el color del texto de las redes sociales*/
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.social-media a:hover 
+{
+    color: #ffcc00; /* Cambia el color del texto de las redes sociales al pasar el ratón*/
+}
+
+#banner video 
+{
+    width: 100%; 
+    height: auto; /* Mantiene la proporción del video */
+    object-fit: cover; 
+}
+
+/* //////////////////////////////TIMELINE///////////////////////////////////*/
+
+.timeline 
+{
+    padding-left: 7px;
+    color:#ebebeb
+}
+
+
+/*////////////////////////////////SAGAS////////////////////////////////////*/
+
+/* Estilos para la sección de Sagas */
+.sagas-container 
+{
+     
+     display:flex; 
+     flex-wrap: wrap; 
+     gap: 20px; 
+     justify-content: center; 
+     margin: 0px; 
+     padding: 0px;
+     
+}
+
+
+.saga-card  /* Tarjetas */
+{   
+    
+    position:relative;
+    height:fit-content;
+    min-height: min-content;
+    width:12%; 
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden; /* Evita que el contenido sobresalga */
+    border-radius: 7px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    margin-top: 70px;
+    margin-bottom: 70px;
+    
+}
+
+.saga-boton /*Botón de las Tarjetas*/
+{
+    background-color: #003cff5b; 
+    min-height:vh;
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 8px 12px; 
+    cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+    margin-top: 0px; 
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+    width: 100%; /* El botón ocupa todo el ancho de la cajita */
+}
+/* Media para tamaños de pantallas*/
+@media (max-width: 768px) 
+{
+.saga-card 
+{
+width: calc(48% - 5px);
+}
+}
+
+ @media (max-width: 480px) 
+{
+.saga-card {
+width: calc(100% - 60px); 
+margin-bottom: 10px;
+}
+}
+
+.saga-card img {
+    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    height: auto; 
+    display: block; 
+}
+
+.saga-card:hover {
+    transform: scale(1.05); /* Efecto de ampliación al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+}
+
+.saga-title {
+    position: absolute; /* Posición del texto en el centro */
+    top: 89%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; 
+    font-weight: bold;
+    text-align: center;
+}
+.aura 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    pointer-events: none; /* Evita que el aura interfiera con el ratón */
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(rgba(255, 196, 0, 0.568) 0%, rgba(255, 166, 0, 0.267) 60%, rgba(183, 0, 255, 0.445) 80%);
+    animation: aura-flame-animation 0.7s infinite alternate;
+}
+
+@keyframes aura-flame-animation { /*Animación javascript de aura en las tarjetas*/
+0% {
+transform: scale(1);
+opacity: 0.7;
+}
+100% {
+transform: scale(1.1);
+opacity: 1;
+}
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saga de los Juegos de Cell Niveles de Poder</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script> <!-- Incluir ECharts -->
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./css/stylesS1.css" />
+</head>
+<body>
+    <h1>Saga de los Juegos de Cell Niveles de Poder</h1> <!-- Título de la página -->
+    
+    <div id="chart-container">
+        <div class="chart" id="miGrafica"></div>
+    </div>
+
+    <script>
+        var dom = document.getElementById('miGrafica');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Gohan SS2', 'Cell SP', 'Cell','Gohan SS1','Goku SS1','Cell JR','Vegeta SSGII', 'Trunks SSGII', 'Piccolo', 'N16',]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            grid: {
+                left: '3%',
+                right: '7%',
+                bottom: '5%',
+                top: '3%',
+                containLabel: true
+            },
+            series: 
+            [
+                {
+                    data: 
+                    [
+                        { value: 3000000000, itemStyle: { color: '#eeec94e8'} },     /*Gohan SS2*/    
+                        { value: 2500000000, itemStyle: { color: '#54b901ee'} },     /*Cell Super Perfect*/
+                        { value: 1800000000, itemStyle: { color: '#54b901ee'} },     /*Cell Perfect*/
+                        { value: 1500000000, itemStyle: { color: '#eeec94e8'} },     /*Gohan SS1*/
+                        { value: 1450000000, itemStyle: { color: '#fc9c0cdc'} },     /*Goku SS1*/
+                        { value: 1150000000, itemStyle: { color: '#9b76ddce'} },     /*Cell JR*/
+                        { value: 1100000000, itemStyle: { color: '#1f3dc2f1'} },     /*Vegeta SS Grado 2*/
+                        { value: 1089464000, itemStyle: { color: '#6b26ddce'} },     /*Trunks SS Grado 2*/
+                        { value: 600000000, itemStyle: { color: '#12b335ee' } },     /*Piccolo*/
+                        { value: 350000000, itemStyle: { color: '#fc6c2cdc' } },    /*N16*/
+                        
+
+                     ],
+                   
+                     type: 'bar',
+                    label: 
+                    {
+                        
+                        show: true,
+                        position: 'inside',
+                        formatter: function(params) 
+                        {
+                        // Función para formatear el número con comas
+                        function formatNumber(num) 
+                        {
+                         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+                        return formatNumber(params.value); // Devuelve el número con comas
+                        
+                        }
+                    }
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+</html>

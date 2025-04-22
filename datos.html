@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+
+
+        .container 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 60px;
+            
+        }
+        .card 
+        {
+            border: 1px solid rgba(26, 26, 26, 0.705);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(7, 7, 7, 0.76);
+            width: 250px;
+            margin: 15px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+            margin-top: 60px;
+
+        }
+        .card:hover 
+        {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.815);
+        }
+        .card figure 
+        {
+            margin: 0;
+            position: relative;
+        }
+        .card img 
+        {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card figcaption 
+        {
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        .modal 
+        {
+            
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Sirve para que el modal esté por encima de otros elementos */
+        }
+        .modal-content 
+        {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            max-height: 80vh; /* Limitar la altura máxima para que no ocupe toda la pantalla */
+            text-align: left;
+            position: relative;
+            z-index: 1001; /* Sirve para que el modal esté por encima de otros elementos */
+            overflow-y: auto; /* Permitir scroll vertical */
+        }
+        .modal-title 
+        { 
+        font-family: 'Saiyan-Sans', sans-serif;
+        font-size: 2.7em; 
+        margin-bottom: 15px; 
+        text-align: center;
+        color:#1a1a1a
+        }
+        .modal-close 
+        {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+        .modal img 
+        {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        
+        @font-face 
+        {
+        font-family: 'Saiyan-Sans';
+        src: url('./fonts/Saiyan-Sans.ttf') format('truetype');
+        }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Universo Dragon Ball Z</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="./Index.html" tabindex="1">Inicio</a></li>
+                <li><a href="./timeline.html" tabindex="2">Línea del Tiempo</a></li>
+                <li><a href="./sagas.html" tabindex="3">Sagas</a></li>
+                <li><a href="./peliculas.html" tabindex="4">Películas</a></li>
+                <li><a href="./datos.html" tabindex="5">Transformaciones</a></li>
+                <li><a href="./Tablas.html" tabindex="6">Tablas de Batallas</a></li>
+                <li><a href="./quizz.html" tabindex="7" target="_blank">Quizz</a></li>
+                <li><a href="./formulario.html" tabindex="8">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--Transformaciones-->
+        <div class="container">
+            <div class="card" onclick="showModal('pelicula1')"> 
+                <figure>
+                    <img src="./Imagenes proyecto/ozaru.jpg" alt="Ozaru">
+                    <figcaption>Ozaru</figcaption> <!--Descripción imagen-->
+                </figure>
+            </div>
+            <div id="pelicula1" class="modal"> <!--Desplegable-->
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeModal('pelicula1')">&times;</span>
+                    <h2 class="modal-title">Ozaru</h2>
+                    <img src="./Imagenes proyecto/ozaru.gif" alt="Ozaru">
+
+                    <p><b>Multiplicador</b></p>
+                    <p>x10</p>
+                    
+                    <p><b>Descripción</b></p>
+                    <p>El Ozaru es una transformación que convierte al Saiyan en un mono gigante. Esta forma sólo es accesible si el Saiyan tiene cola. Mientras está en la forma de Gran Simio, si se le corta la cola, el Saiyan vuelve a su estado normal. Esta transformación se activa cuando se transfieren Ondas Blutz al Saiyan. El suministro más común de Ondas Blutz se da a partir de una Luna Llena. Si no hay Luna disponible, un Saiyan puede usar una esfera de energía. Una vez transformado. Si acaba de empezar a usar esta transformación, el Gran Simio puede entrar en cólera. 
+                        Un Gran Simio que se transforma en Super Saiyan se convierte en un Gran Simio Dorado, que es la clave para alcanzar la transformación Super Saiyan 4</p>
+
+                    <p><b>Usuarios</b></p>
+                    <p>Goku, Gohan, Vegeta, Bardock, Turles, Raditz, Nappa.</p>
+                    
+                 </div>
+            </div>
+
+        <!--Pelicula 2-->
+        <div class="card" onclick="showModal('pelicula2')">
+            <figure>
+                <img src="./Imagenes proyecto/kaioken.jpg" alt="Kaioken">
+                <figcaption>Kaioken</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula2" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula2')">&times;</span>
+                <h2 class="modal-title">Kaioken</h2>
+                <img src="./Imagenes proyecto/kaioken.gif" alt="Kaioken">
+
+                <p><b>Multiplicador</b></p>
+                <p>El base es x2 aunque se puede aumentar lo que el cuerpo aguante.</p>
+                
+                <p><b>Descripción</b></p>
+                <p>El Kaioken es una técnica que se usa como una transformación inventada por Kaio Sama. Multiplica el ki del usuario y convierte su aura en carmesí amplificando su poder y velocidad para vencer a enemigos antes más fuertes a costa de un sobreesfuerzo corporal extremo. 
+                    Se requiere un gran control del ki para blandir el Kaioken correctamente.</p>
+
+                <p><b>Usuarios</b></p>
+                <p>Goku.</p>
+            </div>
+        </div>
+
+        <!--Pelicula 3-->
+        <div class="card" onclick="showModal('pelicula3')">
+            <figure>
+                <img src="./Imagenes proyecto/pseudosupersaiyan.jpg" alt="Pseudo Super Saiyan">
+                <figcaption>Pseudo Super Saiyan</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula3" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula3')">&times;</span>
+                <h2 class="modal-title">Pseudo Super Saiyan</h2>
+                <img src="./Imagenes proyecto/gokuvsslug.gif" alt="Pseudo Super Saiyan">
+
+                <p><b>Multiplicador</b></p>
+                <p>x25</p>
+                
+                <p><b>Descripción</b></p>
+                <p>
+                    Este estado se alcanza cuando un Saiyan está en apuros, furioso y no tiene aún células-S suficientes para completar la forma, por lo que sólo manifiesta brevemente su poder Super Saiyan. No se puede acceder a él a voluntad.
+                    La forma Pseudo Super Saiyan proporciona un gran aumento de poder, velocidad y resistencia. Sin embargo, durante la batalla contra Lord Slug, la fuerza de Goku comenzó a deteriorarse rápidamente y la forma se desvaneció al cabo de un tiempo recuperando Goku su forma habitual. Esto indica que es un estado aparentemente incontrolable, como indican los ojos sin pupilas y sus ataques erráticos. 
+                    Debido a su poder y al comportamiento de Goku, King Kai lo identificó erróneamente como la forma Super Saiyan real, presumiblemente debido a que coincidía con la leyenda.</p>
+
+                <p><b>Usuarios</b></p>
+                <p>Goku.</p>
+            </div>
+        </div>
+        
+            <!--Pelicula 4-->
+        <div class="card" onclick="showModal('pelicula4')">
+        <figure>
+            <img src="./Imagenes proyecto/supersaiyan1.jpg" alt="Super Saiyan 1">
+            <figcaption>Super Saiyan 1</figcaption>
+            </figure>
+        </div>
+        <div id="pelicula4" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal('pelicula4')">&times;</span>
+                <h2 class="modal-title">Super Saiyan 1</h2>
+                <img src="./Imagenes proyecto/supersaiyan1.gif" alt="Super Saiyan 1">
+
+                <p><b>Multiplicador</b></p>
+                <p>x50</p>
+                
+                <p><b>Descripción</b></p>
+                <p>Es una transformación avanzada utilizada por los Saiyan que tienen cantidades suficientes de Células-S para adoptar la forma. Un espíritu gentil tienen más Células-So el aumento de poder de batalla incrementa las Células-S. 
+                    Una vez que el Saiyan tiene suficientes, un sentimiento como la ira puede transformarlo. 
+                    Una vez que ha alcanzado la forma, el usuario puede transformarse en cualquier momento concentrando su energía en su espalda para hacerla vibrar. 
+                    Un Saiyan que tenga un poder de batalla muy grande puede convertirse en Super Saiyan sin necesidad de un desencadenante, debido a su tremendo número de Células-S. 
+                    La descendencia Saiyan heredará las Células-S de sus padres.
+                    Tiene variaciones como los ineficientes y desequilibrados Grado II y Grado III, que aumentan mucho la fuerza pero reduce mucho la velocidad y eficiencia de energía.
+                    Si el usuario se acostumbra a hacer vida diaria y entrena lo suficiente puede llegar a dominarlo, puede conseguir el Super Saiyan Full Power, la forma más balanceada.</p>
+
+                <p><b>Usuarios</b></p>
+                <p>Goku, Trunks, Vegeta, Gohan, Goten, Gotenks, Vegetto, Gogeta.</p>
+            </div>
+        </div>
+
+            <!--Pelicula 5-->
+            <div class="card" onclick="showModal('pelicula5')">
+                <figure>
+                    <img src="./Imagenes proyecto/supersaiyan2-3.jpg" alt="Super Saiyan 2">
+                    <figcaption>Super Saiyan 2</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula5" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula5')">&times;</span>
+                        <h2 class="modal-title">Super Saiyan 2</h2>
+                        <img src="./Imagenes proyecto/supersaiyan2-2.gif" alt="Super Saiyan 2">
+        
+                        <p><b>Multiplicador</b></p>
+                        <p>x100</p>
+                        
+                        <p><b>Descripción</b></p>
+                        <p>Aunque en la serie se le llama «Super Saiyan Ascendido», es el sucesor directo de la primera transformación Super Saiyan. 
+                            Es muy similar a la forma original en apariencia , sin embargo, el poder mucho mayor, ya que la velocidad, la fuerza y el ki aumentan drásticamente.
+                            Gohan debuta con esta transformación en el manga y el anime durante su enfrentamiento con Cell en los Juegos de Cell.                            
+                            Goku, Vegeta y Trunks del Futuro no tardan en seguir su ejemplo a través del entrenamiento (Goku en el Otro Mundo y Vegeta y Trunks del Futuro en la Tierra).
+                            La transformación Super Saiyan 2 puede ser alcanzada por un Saiyan a través de varios medios y difieren a través de sus usuarios, aunque un requisito previo necesario es poseer un poder de batalla lo suficientemente alto, así como poseer Super Saiyan Full Power primero.</p>
+        
+                        <p><b>Usuarios</b></p>
+                        <p>Gohan, Goku, Vegeta, Cell.</p>
+                    </div>
+                </div>   
+
+            <!--Pelicula 6-->
+            <div class="card" onclick="showModal('pelicula6')">
+                <figure>
+                    <img src="./Imagenes proyecto/supersaiyan3-2.jpg" alt="Super Saiyan 3">
+                    <figcaption>Super Saiyan 3</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula6" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula6')">&times;</span>
+                        <h2 class="modal-title">Super Saiyan 3</h2>
+                        <img src="./Imagenes proyecto/supersaiyan3.gif" alt="Super Saiyan 3">
+
+                        <p><b>Multiplicador</b></p>
+                        <p>x400</p>
+                        
+                        <p><b>Descripción</b></p>
+                        <p>Es la tercera forma de Super Saiyan y la sucesora de la segunda transformación. 
+                            Esta forma de Super Saiyan es alcanzable por un Saiyan que ya haya obtenido la forma Super Saiyan 2 y luego se entrene intensamente. 
+                            El propósito de la transformación Super Saiyan 3 es aumentar la utilización del ki, y como resultado, la transformación consume mucha más energía que incluso el Super Saiyan 2. 
+                            Esto conduce notablemente a niveles de fatiga extremos. Si el usuario ha muerto y no tiene un cuerpo vivo, este desgaste se reduce un poco.
+                            La diferencia entre el Super Saiyan 3 y el Super Saiyan 2, su predecesor, se nota inmediatamente, ya que la velocidad, la fuerza y la resistencia superan con creces los límites normales.</p>
+
+                        <p><b>Usuarios</b></p>
+                        <p>Goku, Gotenks.</p>
+                    </div>
+                </div>    
+
+            <!--Pelicula 7-->
+            <div class="card" onclick="showModal('pelicula7')">
+                <figure>
+                    <img src="./Imagenes proyecto/mistico.jpg" alt="Estado Místico">
+                    <figcaption>Estado Místico</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula7" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula7')">&times;</span>
+                        <h2 class="modal-title">Estado Místico</h2>
+                        <img src="./Imagenes proyecto/mistico.gif" alt="Estado Místico">
+
+                        <p><b>Multiplicador</b></p>
+                        <p>x900</p>
+                        
+                        <p><b>Descripción</b></p>
+                        <p>Es un poderoso estado al que puede acceder alguien que ha desbloqueado su potencial a través de la habilidad del Viejo Kai, que le permite utilizar al usuario su poder latente a su máximo nivel. 
+                            Como resultado, el usuario entra en un estado que libera todo su poder oculto y puede enfocarlo para llevarlo mucho más allá de sus límites normales.
+                            Gohan multiplica su poder x900 en la saga de Majin Buu, pero este multiplicador varía según el poder y control del usuario.</p>
+                            
+                        <p><b>Usuarios</b></p>
+                        <p>Gohan.</p>
+                </div> 
+            </div> 
+            <!--Pelicula 8-->
+            <div class="card" onclick="showModal('pelicula8')">
+                <figure>
+                    <img src="./Imagenes proyecto/lss.jpg" alt="Super Saiyan Legendario">
+                    <figcaption>Super Saiyan Legendario</figcaption>
+                    </figure>
+                </div>
+                <div id="pelicula8" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal('pelicula8')">&times;</span>
+                        <h2 class="modal-title">Super Saiyan Legendario</h2>
+                        <img src="./Imagenes proyecto/lss.gif" alt="Super Saiyan Legendario">
+
+                        <p><b>Multiplicador</b></p>
+                        <p>x100</p>
+                        
+                        <p><b>Descripción</b></p>
+                        <p>En la película Broly multiplica su fuerza aproximadamente x100 porque es lo que resiste su cuerpo pero aparentemente tiene energía ilimitada lo que sugiere que puede usar tanto poder como su cuerpo pueda aguantar.
+                            Es una transformación Super Saiyan extremadamente poderosa y rara que aparece una vez cada mil años junto a los usuarios. Como estado Berserk, esta transformación aparentemente tiene un suministro interminable de energía.
+                            Es el Super Saiyan de tipo B de la rama de transformaciones Super Saiyan de Broly, y es un Super Saiyan que ha evolucionado de forma diferente a las formas graduadas y a los niveles 2 y .También es la Forma Final de la forma Super Saiyan estándar, de la que es una versión potenciada, aunque una fuente la considera como Super Saiyan de Tercer Grado, que a su vez es una versión potenciada de la primera forma Super Saiyan.
+                            El Super Saiyan Legendario es un ser de inmenso poder del que se habla en un antiguo folclore saiyan, y se hace referencia a la forma de Broly como el «Super Saiyan Legendario» debido al amor del usuario por la destrucción y la matanza, similar al de los Super Saiyans de la leyenda, y se señala que quizás esta forma impulsada por los instintos sea el verdadero Super Saiyan del que se habla en las leyendas.</p>
+                            
+                        <p><b>Usuarios</b></p>
+                        <p>Broly.</p>
+                    </div>
+                </div>               
+
+        </div>
+    </main>
+        <!-- Footer -->
+        <footer>
+            <h3>Contacto</h3>
+            <p>Email: mail@universodragonballz.com</p>
+            <div class="social-media">
+                <a href="https://es.dragon-ball-official.com/" target="_blank">Web Oficial</a>
+                <a href="https://x.com/DB_official_en" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/dragonballanimeofficial/" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    <script> /*script para ventana Pop Up*/
+        function showModal(id) 
+        {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) 
+        {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+    </body>
+    </html>

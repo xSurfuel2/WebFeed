@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Dragon Ball Z</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+
+        <h1>Universo Dragon Ball Z</h1>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="./Index.html" tabindex="1">Inicio</a></li>
+                <li><a href="./timeline.html" tabindex="2">Línea del Tiempo</a></li>
+                <li><a href="./sagas.html" tabindex="3">Sagas</a></li>
+                <li><a href="./peliculas.html" tabindex="4">Películas</a></li>
+                <li><a href="./datos.html" tabindex="5">Transformaciones</a></li>
+                <li><a href="./Tablas.html" tabindex="6">Tablas de Batallas</a></li>
+                <li><a href="./quizz.html" tabindex="7" target="_blank">Quizz</a></li>
+                <li><a href="./formulario.html" tabindex="8">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <!-- Banner -->
+        <img src="./Imagenes proyecto/DBZK_SteamGif_SS (1).gif" alt="DBZ gif">
+    </div>
+
+    <main>
+        <!-- Sección de Bienvenida -->
+        <section id="welcome">
+
+            <img src="./Imagenes proyecto/UNIVERSO-DRAGON-BALL-Z-22-11-2024.png" alt="DBZ png" class="responsive-img">
+            <style>
+                .responsive-img 
+                {
+                    width: 50%;
+                    max-width: 400px;
+                    height: auto; /* Mantiene la proporción*/
+                    display: block;
+                    margin: 0 auto; /* Centra la imagen horizontalmente */
+                }
+            
+                @media (max-width: 768px) 
+                {
+                    .responsive-img 
+                    {
+                        width: 100%; /* La imagen ocupa todo el ancho de la pantalla en dispositivos pequeños */
+                    }
+                }
+            </style>            
+            
+            <h3>Explora todos los personajes, sus historias y los momentos más épicos de Dragon Ball.</h2>
+        </section>
+
+        <!-- Artículos Destacados -->
+        <h2>Recorrido por la Web</h2>
+        <section id="articles">
+            
+            <div class="article-box">
+                <article>
+                    <h3>Inicio</h3>
+                    <p>La página de bienvenida, encontrarás sugerencias sobre como funciona la página así como los últimos videos y noticias del mundo de Dragon Ball. Recuerda que en el footer puedes encontrar enlaces a redes oficiales.</p>
+                </article>
+            </div>
+            <div class="article-box">
+                <article>
+                    <h3>Línea del Tiempo</h3>
+                    <p>Un recorrido por la línea del tiempo del universo de Dragon Ball, todas las fechas, momentos, luchas y eventos importantes que acontecen en Dragon Ball Z, divididos por años para una búsqueda sencilla.</p>
+                </article>
+            </div>
+            <div class="article-box">
+                <article>
+                    <h3>Sagas</h3>
+                    <p>Una zona dividida en sagas donde si hacemos clic en el texto podremos ver un gráfico de los niveles de poder de los personajes que participan en cada una de ellas, completando los niveles de poder de la serie Dragon Ball Z.</p>
+                </article>
+            </div>
+            <div class="article-box">
+                <article>
+                    <h3>Películas</h3>
+                    <p>Las películas de Dragon Ball nos sirven para rellenar el lore de este apasionante mundo. En este apartado podremos ver todas las películas que hay en Dragon Ball Z, como se ubican en la línea del tiempo, un resumen de la película y los personajes que aparecen en cada una.</p>
+                </article>
+            </div>
+            <div class="article-box">
+                <article>
+                    <h3>Transformaciones</h3>
+                    <p>Aquí puedes encontrar las transformaciones más importantes de la serie de Dragon Ball Z, curiosidades sobre ellas, cómo funcionan, sus características y los usuarios que consiguen cada transformación.</p>
+                </article>
+            </div>
+            <div class="article-box">
+                <article>
+                    <h3>Tablas de Batallas</h3>
+                    <p>¿Alguna vez has querido ver de forma rápida el resultado de una batalla que recuerdes en la serie? Para eso está esta sección. Cuenta con tablas organizadas por sagas en las que podrás ver los participantes con sus niveles de poder respectivos y quien se alzó con la victoria.</p>
+                </article>
+            </div>
+
+            <div class="article-box">
+                <article>
+                    <h3>Quizz</h3>
+                    <p>¿Has explorado lo suficiente nuestra web? ¡Prepárate para enfrentarte a nuestro Quizz de Dragon Ball! Aquí encontrarás preguntas sobre todas las sagas de Dragon Ball Z y sus películas. Quién sabe, Si consigues una buena puntuación igual salta un mensaje felicitandote.</p>
+                </article>
+            </div>
+        </section>
+
+        <!--CSS para la sección Recorrido por la Web-->
+
+        <style>
+
+        #articles 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .article-box 
+        {
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            padding: 20px;
+            background-color: #3638a386;
+            transition: transform 0.3s, background-color 0.3s;
+            max-width: 300px; /* Ancho máximo de las cajas */
+        }
+
+        .article-box:hover 
+        {
+            transform: scale(1.05);
+            box-shadow: #202020;
+        }
+
+        .article-box h3 
+        {
+            font-family:'Courier New', Courier, monospace;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+
+        .article-box p 
+        {
+            font-family: 'Arial', sans-serif;
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        </style>
+
+       <!-- iframe-->
+        <section id="videos">
+            <h2>Videos y noticias de Dragon Ball</h2>
+            <iframe width="400px" height="315" src="https://www.youtube.com/embed/CYcrmsdZuyw?si=aFxb7algYkdzRBgC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> <!--Códigos que da YT para insertar vídeos-->
+            <iframe width="400px" height="315" src="https://www.youtube.com/embed/Aa2IL_i7YfA?si=C6Ym8TqYiT3q6QkS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="400px" height="315" src="https://www.youtube.com/embed/Dfbu3CJS0uY?si=IBcXgEGSYVa-jCZd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="400px" height="315" src="https://www.youtube.com/embed/375et1dYx68?si=AIF66lUhKg1FBbB7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <style> 
+        #videos 
+        { 
+            text-align: center; 
+            justify-content: center;
+
+        } 
+        .video-container 
+        { 
+            text-align: center; 
+            display: inline-block; 
+            justify-content: center;
+            margin: 10px auto; 
+        }
+        @media (max-width: 768px) 
+        {
+            #videos 
+            {
+                max-width:100%
+            }
+
+            .video-container 
+            {
+                max-width:100%
+            }
+
+        }
+        </style>
+
+
+
+
+        <!-- Noticias Recientes -->
+        <br><h2>Noticias Recientes del Sitio Oficial de Dragon Ball</h2>
+        <aside>
+             <ul>
+                <li><a href="https://es.dragon-ball-official.com/news/" target="_blank">Página oficial de noticias actualizadas de Dragon Ball</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_3014.html" target="_blank">¡Obtén toda la información más reciente sobre los juegos y productos de Dragon Ball en la edición de enero repleta y de gran tamaño de V Jump!</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_3024.html" target="_blank">[Archivos de Toriyama] Actualizado cada dos días - ¡Disponible solo durante 24 horas! 22/11/2024</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_1609.html" target="_blank">TAMASHII NATION 2024: En marcha con muchas exhibiciones y eventos</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_3018.html" target="_blank">¡El 40.° aniversario de Dragon Ball! ¡Una mirada retrospectiva a las ilustraciones y mensajes del aniversario de Toriyama!</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_3028.html" target="_blank">Monthly Dragon Ball Report n.° 11: ¡Una mirada retrospectiva al fascinante capítulo final!</a></li>
+                <li><a href="https://es.dragon-ball-official.com/news/01_3022.html" target="_blank">¡La temporada 7 de DRAGON BALL: THE BREAKERS llegará pronto! ¡Se publicó la última información!</a></li>
+
+            </ul>
+        </aside>
+
+        <!--CSS Noticias Recientes-->
+            <style>
+                aside 
+                {
+                    background-color: #3638a386;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.199);
+                    padding: 20px;
+                    margin: 20px;
+                    max-width: 600px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 200px; /* Altura fija */ 
+                    overflow-y: auto; /* Permitir scroll vertical */
+                    text-align: center;
+                }
+
+                aside h2 
+                {
+                    font-size: 24px;
+                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+                    color: #e9a11c;
+                    text-align: center;
+                }
+
+ 
+                aside ul li a:hover 
+                {
+                    color: #e9a11c;
+                }
+
+                @media (max-width: 768px) 
+                {
+                    aside {
+                        padding: 15px;
+                    }
+
+                    aside h2 {
+                        font-size: 20px;
+                    }
+
+                    aside ul li a {
+                        font-size: 16px;
+                    }
+                }
+            </style>  
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <h3>Contacto</h3>
+            <p>Email: mail@universodragonballz.com</p>
+            <div class="social-media">
+                <a href="https://es.dragon-ball-official.com/" target="_blank">Web Oficial</a>
+                <a href="https://x.com/DB_official_en" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/dragonballanimeofficial/" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    </body>
+    </html>
