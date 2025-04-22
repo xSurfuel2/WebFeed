@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" > <!--Definición de atom, que permite usar elementos dentro del RSS para indicar la URL del feed.-->
     <channel>
         <title>Universo Dragon Ball Z</title>
         <link>https://velvety-arithmetic-5f79f2.netlify.app/</link>
